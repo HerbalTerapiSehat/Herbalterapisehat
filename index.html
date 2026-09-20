@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Paket Herbal Terapi Stroke & Kebas - MyBiodima, Megsquivit, Pro Bartho Join</title>
+  <title>Paket Herbal Terapi Stroke & Kebas - MyBiodima, Megsquvit, Pro Barthojoin</title>
   
-  <meta name="description" content="Solusi kebas tangan dan kaki, terapi stroke dan syaraf kejepit. Paket 3 herbal: MyBiodima, Megsquivit, Pro Bartho Join. Bisa COD & Gratis Ongkir di Shopee.">
-  <meta name="keywords" content="herbal stroke, kebas tangan, syaraf kejepit, mybiodima, megsquivit, pro bartho join, herbal terapi">
+  <meta name="description" content="Solusi kebas tangan dan kaki, terapi stroke dan syaraf kejepit. Paket 3 herbal: MyBiodima, Megsquvit, Pro Barthojoin. Bisa COD di Shopee.">
+  <meta name="keywords" content="herbal stroke, kebas tangan, syaraf kejepit, mybiodima, megsquvit, pro barthojoin, herbal terapi">
   <meta name="author" content="Herbal Terapi Sehat">
   
   <!-- Open Graph (untuk share WhatsApp/Facebook) -->
@@ -172,12 +172,12 @@
       transform: rotate(-0.5deg);
     }
 
-    /* ===== HERO PRODUCT SINGLE CARD (UPDATED PADDING) ===== */
+    /* ===== HERO PRODUCT SINGLE CARD ===== */
     .hero-single-card {
       background: #ffffff;
       border-radius: 40px;
       box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.15), 0 8px 0 #fff, 0 0 0 4px #fff;
-      padding: 16px; /* Dikurangi dari 24px */
+      padding: 16px;
       max-width: 600px;
       width: 100%;
       margin: 48px auto 40px;
@@ -193,7 +193,6 @@
       box-shadow: 0 30px 35px -12px rgba(0, 0, 0, 0.2), 0 8px 0 #fff, 0 0 0 4px #fff;
     }
 
-    /* Gambar mengisi 85% dari frame */
     .hero-single-card .product-img-main {
       width: 85%;
       max-width: 100%;
@@ -371,7 +370,7 @@
       margin: 8px auto 0;
     }
 
-    /* ===== FLIP CARD GRID (UPDATED PADDING) ===== */
+    /* ===== FLIP CARD GRID ===== */
     .product-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -386,6 +385,10 @@
       perspective: 1000px;
       height: 420px;
       cursor: pointer;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
     }
 
     .flip-card-inner {
@@ -397,9 +400,17 @@
       transform-style: preserve-3d;
       border-radius: 36px;
       box-shadow: 0 16px 0 #f0e7db, 0 25px 30px -12px rgba(0, 0, 0, 0.1);
+      will-change: transform;
     }
 
-    .flip-card:hover .flip-card-inner,
+    /* Hover flip HANYA di perangkat dengan mouse (desktop) */
+    @media (hover: hover) and (pointer: fine) {
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+    }
+
+    /* Trigger flip utama (tap/klik) */
     .flip-card.flipped .flip-card-inner {
       transform: rotateY(180deg);
     }
@@ -417,15 +428,13 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 16px; /* Dikurangi dari 24px */
+      padding: 16px;
     }
 
-    /* Front Side */
     .flip-card-front {
       background: #fff;
     }
 
-    /* Gambar mengisi 85% dari frame */
     .flip-card-front .product-img-lg {
       width: 85%;
       max-width: 100%;
@@ -442,7 +451,6 @@
       margin: 0;
     }
 
-    /* Back Side */
     .flip-card-back {
       background: #fff;
       transform: rotateY(180deg);
@@ -627,12 +635,12 @@
         Solusi Kebas Tangan dan Kaki,<br>
         <span class="highlight-orange">Terapi Stroke</span> dan Syaraf Kejepit
       </h1>
-      <div class="subhead fade-in">Paket Herbal 3in1 — MyBiodima, Megsquivit, Pro Bartho Join</div>
+      <div class="subhead fade-in">Paket Herbal 3in1 — MyBiodima, Megsquvit, Pro Barthojoin</div>
 
       <!-- Hero Product Single Card -->
       <div class="hero-single-card fade-in">
         <img src="assets/images/products/paket-3in1-hero.png" 
-             alt="Paket Herbal 3in1: MyBiodima, Megsquivit, Pro Bartho Join" 
+             alt="Paket Herbal 3in1: MyBiodima, Megsquivit, Pro Barthojoin" 
              class="product-img-main"
              loading="lazy">
         <div class="badge-list">
@@ -645,14 +653,14 @@
       <!-- CTA Highlight & Button -->
       <div class="cta-wrapper fade-in">
         <div class="cta-highlight brush-yellow">
-          Bisa COD dan Gratis Ongkir<br>di Shopee
+          Bisa COD di Shopee
         </div>
         <div>
           <a href="https://s.shopee.co.id/70K6LcGyx9" target="_blank" rel="noopener" class="cta-btn">
             <span class="left-icon"><i class="fas fa-shopping-bag"></i></span>
             <span>
               Beli di Shopee
-              <span class="small-text">Dapatkan Potongan dari Shopee</span>
+              <span class="small-text">Klik di Sini Sekarang!</span>
             </span>
             <i class="fas fa-arrow-right"></i>
           </a>
@@ -678,7 +686,7 @@
   <div class="container">
     <div class="product-grid">
       <!-- Produk 1: MyBiodima -->
-      <div class="flip-card fade-in">
+      <div class="flip-card fade-in" tabindex="0" role="button" aria-label="MyBiodima, ketuk untuk detail">
         <div class="flip-card-inner">
           <div class="flip-card-front">
             <img src="assets/images/products/mybiodima-product.png" 
@@ -689,7 +697,7 @@
           </div>
           <div class="flip-card-back">
             <h4>MyBiodima</h4>
-            <p class="desc">MyBiodima Plus Stemcell bekerja di sistem saraf.Mengandung Habbatussauda, Madu Yaman, Delima, Kurma Ajwa, Saffron dan Buah Tin..</p>
+            <p class="desc">MyBiodima Plus Stemcell bekerja di sistem saraf. Mengandung Habbatussauda, Madu Yaman, Delima, Kurma Ajwa, Saffron dan Buah Tin.</p>
             <div class="badge-list">
               <span class="badge">Herbal</span>
               <span class="badge orange">Syaraf</span>
@@ -698,20 +706,19 @@
         </div>
       </div>
 
-      <!-- Produk 2: Megsquivit -->
-      <div class="flip-card fade-in">
+      <!-- Produk 2: Megsquvit -->
+      <div class="flip-card fade-in" tabindex="0" role="button" aria-label="Megsquvit, ketuk untuk detail">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="assets/images/products/megsquivit-product.png" 
-                 alt="Megsquivit" 
+            <img src="assets/images/products/megsquvit-product.png" 
+                 alt="Megsquvit" 
                  class="product-img-lg"
                  loading="lazy">
             <h3>Megsquvit</h3>
           </div>
           <div class="flip-card-back">
-            <h4>Megsquivit</h4>
-            <p class="desc">Terapi  kesehatan Jantung dan Otak (bekerja melalui pembuluh darah)<br>
-            Mengandung Fish Oil Omega 3 900 mg, EPA 360 mg, DHA 270 mg, Squalene 100 mg, Vitamin D3, Vitamin E dan Vitamin K2.</p>
+            <h4>Megsquvit</h4>
+            <p class="desc">Terapi kesehatan Jantung dan Otak (bekerja melalui pembuluh darah). Mengandung Fish Oil Omega 3 900 mg, EPA 360 mg, DHA 270 mg, Squalene 100 mg, Vitamin D3, Vitamin E dan Vitamin K2.</p>
             <div class="badge-list">
               <span class="badge blue">Jantung</span>
               <span class="badge">Otak</span>
@@ -720,20 +727,19 @@
         </div>
       </div>
 
-      <!-- Produk 3: Pro Bartho Join -->
-      <div class="flip-card fade-in">
+      <!-- Produk 3: Pro Barthojoin -->
+      <div class="flip-card fade-in" tabindex="0" role="button" aria-label="Pro Barthojoin, ketuk untuk detail">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="assets/images/products/pro-bartho-join-product.png" 
-                 alt="Pro Bartho Join" 
+            <img src="assets/images/products/pro-barthojoin-product.png" 
+                 alt="Pro Barthojoin" 
                  class="product-img-lg"
                  loading="lazy">
-            <h3>Pro Bartho Join</h3>
+            <h3>Pro Barthojoin</h3>
           </div>
           <div class="flip-card-back">
-            <h4>Pro Bartho Join</h4>
-            <p class="desc">Terapi Sendi dan Tulang<br>
-            Mengandung Gamat, Spirulina, Rumput teki dan Ikan gabus</p>
+            <h4>Pro Barthojoin</h4>
+            <p class="desc">Terapi Sendi dan Tulang. Mengandung Gamat, Spirulina, Rumput teki dan Ikan gabus.</p>
             <div class="badge-list">
               <span class="badge orange">Sendi</span>
               <span class="badge">Tulang</span>
@@ -753,7 +759,7 @@
         <span class="left-icon"><i class="fas fa-shopping-bag"></i></span>
         <span>
           Beli Sekarang di Shopee
-          <span class="small-text">Potongan & Gratis Ongkir</span>
+          <span class="small-text">Klik di Sini Sekarang!</span>
         </span>
         <i class="fas fa-arrow-right"></i>
       </a>
@@ -779,7 +785,7 @@
   <!-- ===== JAVASCRIPT ===== -->
   <script>
     (function() {
-      // Fade in on scroll
+      // ===== Fade in on scroll =====
       const faders = document.querySelectorAll('.fade-in');
       const appearOptions = {
         threshold: 0.2,
@@ -809,7 +815,7 @@
         });
       });
 
-      // Fallback: jika gambar gagal load, tampilkan placeholder
+      // ===== Fallback gambar gagal load =====
       document.querySelectorAll('img').forEach(img => {
         img.addEventListener('error', function() {
           this.style.background = '#f1ede7';
@@ -819,11 +825,37 @@
         });
       });
 
-      // Flip Card Logic for Mobile (Click to flip)
+      // ===== FLIP CARD — responsif di mobile (langsung saat disentuh) =====
       const flipCards = document.querySelectorAll('.flip-card');
+
       flipCards.forEach(card => {
-        card.addEventListener('click', function() {
-          this.classList.toggle('flipped');
+        let lastToggle = 0;
+
+        const toggleFlip = (e) => {
+          // Cegah double trigger (pointerdown + click pada beberapa browser)
+          const now = Date.now();
+          if (now - lastToggle < 300) return;
+          lastToggle = now;
+
+          if (e && e.cancelable) e.preventDefault();
+          card.classList.toggle('flipped');
+        };
+
+        // Respons instan di mobile & desktop (pointer events mencakup touch + mouse)
+        if (window.PointerEvent) {
+          card.addEventListener('pointerdown', toggleFlip);
+        } else {
+          // Fallback untuk browser lama
+          card.addEventListener('touchstart', toggleFlip, { passive: false });
+          card.addEventListener('click', toggleFlip);
+        }
+
+        // Dukungan keyboard (Enter / Space)
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            card.classList.toggle('flipped');
+          }
         });
       });
     })();
